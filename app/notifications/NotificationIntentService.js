@@ -1,4 +1,4 @@
-android.app.IntentService.extend("com.tns.notifications.NotificationIntentService", {
+com.pip3r4o.android.app.IntentService.extend("com.tns.notifications.NotificationIntentService", {
     onHandleIntent: function (intent) {
         var action = intent.getAction();
         if ("ACTION_START" == action) {
