@@ -13,7 +13,7 @@ function createViewModel() {
     viewModel.message = "Try implementing a stop-notifications (alarm) functionality!";
 
     viewModel.onTap = function () {
-        services.setupAlarm(utils.ad.getApplicationContext());
+        services.scheduleJob(utils.ad.getApplicationContext());
     }
 
     return viewModel;

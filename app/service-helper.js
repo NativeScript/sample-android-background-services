@@ -1,16 +1,18 @@
-function getStartPendingIntent(context) {
-    var intent = new android.content.Intent(context, com.tns.broadcastreceivers.NotificationEventReceiver.class);
-    intent.setAction("ACTION_START_NOTIFICATION_SERVICE");
-    return android.app.PendingIntent.getBroadcast(context, 0, intent, android.app.PendingIntent.FLAG_UPDATE_CURRENT);
+function scheduleJob(context) {
+    // Create a component from the JobService that should be triggered
+    var component = new android.content.ComponentName(context, com.tns.notifications.MyJobService.class);
+
+    // Set the id of the job to something meaningful for you
+    const builder = new android.app.job.JobInfo.Builder(1, component);
+
+    // Optional: Set how often the task should be triggered. The minimum is 15min.
+    builder.setPeriodic(20 * 60 * 1000);
+    
+    // Optional: Set additional requirements under what conditions your job should be triggered
+    builder.setRequiresCharging(true);
+
+    const jobScheduler = context.getSystemService(android.content.Context.JOB_SCHEDULER_SERVICE);
+    console.log("Job Scheduled: " + jobScheduler.schedule(builder.build()));
 }
 
-function setupAlarm(context) {
-    var alarmManager = context.getSystemService(android.content.Context.ALARM_SERVICE);
-    var alarmIntent = getStartPendingIntent(context);
-    alarmManager.setRepeating(android.app.AlarmManager.RTC_WAKEUP,
-        java.lang.System.currentTimeMillis(),
-        1000 * 60 * 5, // <- every 5 minutes // 1000 * 60 * 60 * 24, /* alarm will send the `alarmIntent` object every 24h */
-        alarmIntent);
-}
-
-module.exports.setupAlarm = setupAlarm;
+module.exports.scheduleJob = scheduleJob;
