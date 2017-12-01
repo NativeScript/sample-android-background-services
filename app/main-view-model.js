@@ -3,14 +3,13 @@ var application = require("application");
 var utils = require("utils/utils");
 var services = require("./service-helper");
 
-
 function getMessage(counter) {
     return counter;
 }
 
 function createViewModel() {
     var viewModel = new Observable();
-    viewModel.message = "Try implementing a stop-notifications (alarm) functionality!";
+    viewModel.message = "Schedule a local notification every 20 mins";
 
     viewModel.onTap = function () {
         services.scheduleJob(utils.ad.getApplicationContext());
