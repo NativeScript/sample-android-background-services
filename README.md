@@ -1,6 +1,10 @@
 # Notifications Scheduler 
 
-> Important: In order to use the custom `com.pip3r4o.android.app.IntentService` implementation, you need to install the **nativescript-android-utils** package as a plugin in your application.
+> **IMPORTANT**: In order to use the custom `com.pip3r4o.android.app.IntentService` implementation, you need to install the **nativescript-android-utils** package as a plugin in your application.
+
+
+---
+
 
 To see an iOS version of this sample please check - https://github.com/NativeScript/sample-ios-background-execution
 
