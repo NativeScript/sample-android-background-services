@@ -1,5 +1,11 @@
 # Notifications Scheduler 
 
+> **IMPORTANT**: In order to use the custom `com.pip3r4o.android.app.IntentService` implementation, you need to install the **nativescript-android-utils** package as a plugin in your application.
+
+
+---
+
+
 To see an iOS version of this sample please check - https://github.com/NativeScript/sample-ios-background-execution
 
 A sample project demonstrating how Android background services work in NativeScript, using the Android AlarmManager to schedule periodical calling of an IntentService, which should create Notifications even when the Application's Activities have been destroyed. (**Caution: Be very mindful when developing applications which send out notifications. Some users may find them annoying, if they get them too often, and as a result - delete your application.**)
