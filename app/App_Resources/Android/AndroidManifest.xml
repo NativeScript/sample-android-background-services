@@ -38,19 +38,11 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name="com.tns.ErrorReportActivity"/>
-		
-  <service  android:name="com.tns.notifications.NotificationIntentService"
-            android:enabled="true"
-            android:exported="false" />
-
-        <receiver android:name="com.tns.broadcastreceivers.NotificationEventReceiver" />
-        <receiver android:name="com.tns.broadcastreceivers.NotificationServiceStarterReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-                <action android:name="android.intent.action.TIME_SET" />
-            </intent-filter>
-        </receiver>
+		<activity android:name="com.tns.ErrorReportActivity"/>	
+		<service 
+				android:name="com.tns.notifications.MyJobService"
+				android:permission="android.permission.BIND_JOB_SERVICE" 
+				android:enabled="true"
+				android:exported="true" />
 	</application>
 </manifest>
