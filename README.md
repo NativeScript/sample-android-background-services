@@ -2,6 +2,7 @@
 
 > **IMPORTANT**: In order to use the custom `com.pip3r4o.android.app.IntentService` implementation, you need to install the **nativescript-android-utils** package as a plugin in your application.
 
+> **Note:**: This demo is using `android.app.NotificationChannel` which is available only for API 26+ (Android 8 and above).
 
 ---
 
@@ -23,4 +24,4 @@ IntentService’s implementation needs to use a constructor that takes no argume
 - The [base Service class](https://developer.android.com/reference/android/app/Service.html) and all its descendants execute on the main UI thread by default in Android. Implementing a service that should run on a background thread must be managed in Java by the developer (see **Notes**).
 - [BroadcastReceivers](http://www.tutorialspoint.com/android/android_broadcast_receivers.htm) should not be registered with the `android: process =":remote"` property in the AndroidManifest as the receiver will be unable to execute JavaScript in an independent process
 - The suggested approach when you want to offload a long-running job on a different Thread is to write the implementation in Java classes and invoke the job in NativeScript.
-- The current implementation utilizes the JobScheduler, which was added in API Level 21. If you want to target lower API Levels, take a look at the older implementation [Alarm Manager Implementation](https://github.com/NativeScript/sample-android-background-services/tree/implementation-prior-apiLevel21). Have in mind, that this approaches is not supported with API Level 26 or newer due to limitations in the OS.
+- The current implementation utilizes the `NotificationChannel`, which was added in API Level 26. If you want to target lower API Levels, take a look at the older implementation [Alarm Manager Implementation](https://github.com/NativeScript/sample-android-background-services/tree/implementation-prior-apiLevel21). Have in mind, that this approaches is not supported with API Level 26 or newer due to limitations in the OS.
