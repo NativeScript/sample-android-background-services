@@ -1,3 +1,6 @@
+package-lock.json
+webpack.config.js
+
 # Built application files
 *.apk
 *.ap_
