@@ -43,5 +43,6 @@ captures/
 
 platforms
 node_modules
+hooks
 .vscode
 .DS_Store
