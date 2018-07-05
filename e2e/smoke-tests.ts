@@ -23,7 +23,7 @@ describe("smoke tests", () => {
         const btnTap = await driver.findElementByText("Every 20 mins", SearchOptions.contains);
         assert.isTrue(await btnTap.isDisplayed(), "App is not running");
 
-        await btnTap.click();
+        await btnTap.tap();
 
         const logs = await driver.getlog(LogType.logcat);
 
