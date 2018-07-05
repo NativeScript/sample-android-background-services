@@ -46,3 +46,6 @@ node_modules
 hooks
 .vscode
 .DS_Store
+report
+test-results.xml
+e2e/*.js

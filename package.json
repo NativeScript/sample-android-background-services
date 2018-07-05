@@ -14,10 +14,19 @@
     "tns-core-modules": "4.1.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.0.2",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.5",
     "babel-traverse": "6.26.0",
     "babel-types": "6.26.0",
     "babylon": "6.18.0",
     "lazy": "1.0.11",
-    "nativescript-dev-webpack": "^0.14.2"
+    "nativescript-dev-appium": "^3.3.0",
+    "nativescript-dev-webpack": "^0.14.2",
+    "typescript": "^2.9.2"
+  },
+  "scripts": {
+    "e2e": "tsc -p e2e && mocha --opts ./e2e/config/mocha.opts",
+    "e2e-watch": "tsc -p e2e --watch"
   }
 }
