@@ -48,4 +48,6 @@ hooks
 .DS_Store
 report
 test-results.xml
-e2e/*.js
+
+verify-report
+webpack.config.js
