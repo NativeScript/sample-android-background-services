@@ -21,7 +21,10 @@
     "babel-types": "6.26.0",
     "babylon": "6.18.0",
     "lazy": "1.0.11",
-    "nativescript-dev-appium": "next",
+    "mocha": "~5.1.0",
+    "mocha-junit-reporter": "~1.17.0",
+    "mocha-multi": "~1.0.0",
+    "nativescript-dev-appium": "^4.1.0-2018-10-05-01",
     "nativescript-dev-webpack": "^0.14.2"
   },
   "scripts": {
