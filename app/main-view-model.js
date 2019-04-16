@@ -8,7 +8,7 @@ function getMessage(counter) {
 
 function createViewModel() {
     var viewModel = new Observable();
-    viewModel.message = "Schedule a local notification every 1 minute";
+    viewModel.message = "Schedule a local notification every 15 minutes";
 
     viewModel.onTap = function () {
         jobScheduler.scheduleJob(utils.ad.getApplicationContext());

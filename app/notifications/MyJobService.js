@@ -1,11 +1,13 @@
 
+const ad = require("tns-core-modules/utils/utils").ad;
+const context = ad.getApplicationContext();
+
 android.app.job.JobService.extend("com.tns.notifications.MyJobService", {
     onStartJob: function(params) {       
         console.log("Job execution ...");
 
         // Do something useful here, fetch data and show notification for example
-        const utils = require("tns-core-modules/utils/utils");
-        const context = utils.ad.getApplicationContext();
+
     
         const builder = new android.app.Notification.Builder(context);
         builder.setContentTitle("Scheduled Notification")

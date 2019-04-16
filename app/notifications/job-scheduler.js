@@ -7,7 +7,7 @@ function scheduleJob(context) {
     const builder = new android.app.job.JobInfo.Builder(1, component);
 
     // Optional: Set how often the task should be triggered. The minimum is 15min.
-    builder.setPeriodic(1 * 60 * 1000);
+    builder.setPeriodic(15 * 60 * 1000);
     
     // Optional: Set additional requirements under what conditions your job should be triggered
     builder.setRequiresCharging(true);
