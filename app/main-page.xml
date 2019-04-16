@@ -1,7 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
   <StackLayout>
     <Label text="Start Notifications" class="title"/>
-    <Button text="Every 20 mins" tap="{{ onTap }}" />
+    <Button text="Every 15 minutes (this is the minimum period that can be set)" tap="{{ onTap }}" />
     <Label text="{{ message }}" class="message" textWrap="true"/>
   </StackLayout>
 </Page>

@@ -1,2 +1,2 @@
-var application = require("application");
-application.start({ moduleName: "main-page" });
+var application = require("tns-core-modules/application");
+application.run({ moduleName: "app-root" });

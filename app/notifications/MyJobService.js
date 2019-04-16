@@ -1,12 +1,12 @@
+const ad = require("tns-core-modules/utils/utils").ad;
+const context = ad.getApplicationContext();
+
 android.app.job.JobService.extend("com.tns.notifications.MyJobService", {
     onStartJob: function(params) {       
         console.log("Job execution ...");
 
         // Do something useful here, fetch data and show notification for example
-        var utils = require("utils/utils");
-        var context = utils.ad.getApplicationContext();
-    
-        var builder = new android.app.Notification.Builder(context);
+        const builder = new android.app.Notification.Builder(context);
         builder.setContentTitle("Scheduled Notification")
             .setAutoCancel(true)
             .setColor(android.R.color.holo_purple)//getResources().getColor(R.color.colorAccent))
@@ -14,10 +14,15 @@ android.app.job.JobService.extend("com.tns.notifications.MyJobService", {
             .setVibrate([100, 200, 100])
             .setSmallIcon(android.R.drawable.btn_star_big_on);
     
-            // will open main NativeScript activity when the notification is pressed
-        var mainIntent = new android.content.Intent(context, com.tns.NativeScriptActivity.class); 
+        // will open main NativeScript activity when the notification is pressed
+        const mainIntent = new android.content.Intent(context, com.tns.NativeScriptActivity.class); 
            
-        var mNotificationManager = context.getSystemService(android.content.Context.NOTIFICATION_SERVICE);
+        // example for custom intent passing custom data via the broadcast receiver
+        let intent = new android.content.Intent("customservice");
+        var broadcastManager = android.support.v4.content.LocalBroadcastManager.getInstance(ad.getApplicationContext());
+        broadcastManager.sendBroadcast(intent);
+
+        const mNotificationManager = context.getSystemService(android.content.Context.NOTIFICATION_SERVICE);
 
         // The id of the channel.
         const channelId = "my_channel_01";
