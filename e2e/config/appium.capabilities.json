@@ -6,7 +6,7 @@
         "avd": "Emulator-Api26-Google",
         "lt": 60000,
         "newCommandTimeout": 720,
-        "noReset": true,
+        "noReset": false,
         "fullReset": false,
         "app": ""
     },
@@ -17,7 +17,7 @@
         "avd": "Emulator-Api27-Google",
         "lt": 60000,
         "newCommandTimeout": 720,
-        "noReset": true,
+        "noReset": false,
         "fullReset": false,
         "app": ""
     },
@@ -28,7 +28,7 @@
         "avd": "Emulator-Api28-Google",
         "lt": 60000,
         "newCommandTimeout": 720,
-        "noReset": true,
+        "noReset": false,
         "fullReset": false,
         "app": ""
     }

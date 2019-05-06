@@ -1,14 +1,15 @@
 const nsAppium = require("nativescript-dev-appium");
 const assert = require("chai").assert;
 
-describe("smoke tests", () => {
+describe("smoke tests", async function () {
     let driver;
 
-    before(async () => {
+    before(async function () {
+        nsAppium.nsCapabilities.testReporter.context = this;
         driver = await nsAppium.createDriver();
     });
 
-    after(async () => {
+    after(async function () {
         await driver.quit();
         console.log("Quit driver!");
     });
@@ -19,8 +20,8 @@ describe("smoke tests", () => {
         }
     });
 
-    it("assert console log", async () => {
-        const btnTap = await driver.findElementByText("Every 20 mins", "contains");
+    it("assert console log", async function () {
+        const btnTap = await driver.findElementByClassName(driver.locators.button);
         assert.isTrue(await btnTap.isDisplayed(), "App is not running");
 
         await btnTap.tap();
