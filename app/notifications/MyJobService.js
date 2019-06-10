@@ -19,7 +19,7 @@ android.app.job.JobService.extend("com.tns.notifications.MyJobService", {
            
         // example for custom intent passing custom data via the broadcast receiver
         let intent = new android.content.Intent("customservice");
-        var broadcastManager = android.support.v4.content.LocalBroadcastManager.getInstance(ad.getApplicationContext());
+        var broadcastManager = androidx.localbroadcastmanager.content.LocalBroadcastManager.getInstance(ad.getApplicationContext());
         broadcastManager.sendBroadcast(intent);
 
         const mNotificationManager = context.getSystemService(android.content.Context.NOTIFICATION_SERVICE);
