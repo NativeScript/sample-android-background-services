@@ -6,19 +6,19 @@
   "nativescript": {
     "id": "org.nativescript.bgservice",
     "tns-android": {
-      "version": "6.0.0-2019-06-19-230109-04"
+      "version": "5.4.0"
     }
   },
   "dependencies": {
     "nativescript-android-utils": "^1.0.2",
-    "tns-core-modules": "next"
+    "tns-core-modules": "5.4.3"
   },
   "devDependencies": {
     "mocha": "~5.2.0",
     "mochawesome": "~3.1.2",
     "nativescript-dev-appium": "next",
     "nativescript-dev-webpack": "next",
-    "tns-platform-declarations": "next"
+    "tns-platform-declarations": "5.4.3"
   },
   "scripts": {
     "e2e": "mocha --opts ./e2e/config/mocha.opts",
