@@ -10,7 +10,7 @@ function scheduleJob(context) {
     builder.setPeriodic(15 * 60 * 1000);
     
     // Optional: Set additional requirements under what conditions your job should be triggered
-    builder.setRequiresCharging(true);
+    builder.setRequiresCharging(false);
 
     const jobScheduler = context.getSystemService(android.content.Context.JOB_SCHEDULER_SERVICE);
     console.log("Job Scheduled: " + jobScheduler.schedule(builder.build()));

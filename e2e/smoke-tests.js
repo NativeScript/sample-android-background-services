@@ -31,16 +31,15 @@ describe("smoke tests", async function () {
         let containsJobExecutions = false;
         let containsJobScheduled = false;
         logs.forEach(log => {
-            const logPart = JSON.stringify(log);
-            if (logPart.includes("Job Scheduled: 1")) {
+            if (/Job Scheduled: 1/mig.test(log.message)) {
                 containsJobScheduled = true;
             }
 
-            if (logPart.includes("Job execution")) {
+            if (/Job Execution/igm.test(log.message)) {
                 containsJobExecutions = true;
             }
         });
-        assert.isTrue(containsJobExecutions);
-        assert.isTrue(containsJobScheduled);
+        assert.isTrue(containsJobScheduled, "Not found: Job Scheduled: 1");
+        assert.isTrue(containsJobExecutions, "Not found: Job execution");
     });
 });
